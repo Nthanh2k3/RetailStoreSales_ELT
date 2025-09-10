@@ -1,0 +1,31 @@
+
+  
+    
+
+  create  table "postgres"."silver_to_golden"."fct_store_visits__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+with store_visits_gold as (
+    select
+        sv.visit_id,
+        sv.customer_id,
+        sv.store_id,
+        sv.visit_date,
+        c.name as customer_name,
+        sto.name as store_name,
+        date_part('year', sv.visit_date) as visit_year,
+        date_part('month', sv.visit_date) as visit_month,
+        date_part('day', sv.visit_date) as visit_day
+    from "postgres"."silver"."store_visits_silver" sv
+    left join "postgres"."silver"."customers_silver" c on sv.customer_id = c.customer_id
+    left join "postgres"."silver"."stores_silver" sto on sv.store_id = sto.store_id
+)
+
+select * from store_visits_gold
+  );
+  

@@ -1,0 +1,18 @@
+# ~/.dbt/profiles.yml
+retail_dbt:
+  target: dev
+  logs:
+    show_tracebacks: false
+  outputs:
+    dev:
+      type: postgres
+      host: thanhnv164-db-postgres.ceahrljdchqz.us-east-1.rds.amazonaws.com
+      user: 'postgres'
+      password: 'Ngthanh2312'
+      port: 5432
+      dbname: postgres
+      schema: silver
+      threads: 4
+      keepalives_idle: 0
+      connect_timeout: 10
+      retries: 1

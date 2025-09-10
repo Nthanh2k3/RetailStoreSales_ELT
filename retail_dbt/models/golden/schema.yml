@@ -1,0 +1,833 @@
+version: 2
+
+models:
+  - name: dim_brands_scd
+    description: "Dimension table for brands with SCD tracking"
+    columns:
+      - name: brand_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: brand_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_campaigns
+    description: "Dimension table for campaigns"
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: budget
+        tests:
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+
+  - name: dim_categories_scd
+    description: "Dimension table for categories with SCD tracking"
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: category_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_customers_scd
+    description: "Dimension table for customers with SCD tracking"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: phone
+        tests:
+          - not_null
+      - name: loyalty_program_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: customer_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_discount_rules
+    description: "Dimension table for discount rules"
+    columns:
+      - name: rule_id
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        tests:
+          - not_null
+      - name: discount_type
+        tests:
+          - not_null
+      - name: value
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+
+  - name: dim_employees_scd
+    description: "Dimension table for employees with SCD tracking"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: role
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: employee_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_loyalty_programs_scd
+    description: "Dimension table for loyalty programs with SCD tracking"
+    columns:
+      - name: loyalty_program_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: points_per_dollar
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: loyalty_program_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_products_scd
+    description: "Dimension table for products with SCD tracking"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: category_id
+        tests:
+          - not_null
+      - name: brand_id
+        tests:
+          - not_null
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: product_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_promotions_scd
+    description: "Dimension table for promotions with SCD tracking"
+    columns:
+      - name: promotion_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: promotion_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_stores_scd
+    description: "Dimension table for stores with SCD tracking"
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: location
+        tests:
+          - not_null
+      - name: manager_id
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: store_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_suppliers_scd
+    description: "Dimension table for suppliers with SCD tracking"
+    columns:
+      - name: supplier_id
+        tests:
+          - not_null
+          - unique
+      - name: name
+        tests:
+          - not_null
+      - name: contact_info
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        tests:
+          - not_null
+      - name: dbt_updated_at
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
+      - name: dbt_valid_to
+        tests:
+          - not_null
+      - name: supplier_sk
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: is_current
+        tests:
+          - not_null
+
+  - name: dim_tax_rules
+    description: "Dimension table for tax rules"
+    columns:
+      - name: tax_id
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        tests:
+          - not_null
+      - name: tax_rate
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null
+
+  # Fact tables
+  - name: fct_customer_feedback
+    description: "Fact table for customer feedback"
+    columns:
+      - name: feedback_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: rating
+        tests:
+          - not_null
+      - name: comments
+        tests:
+          - not_null
+      - name: feedback_date
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: feedback_year
+        tests:
+          - not_null
+      - name: feedback_month
+        tests:
+          - not_null
+      - name: feedback_day
+        tests:
+          - not_null
+
+  - name: fct_inventory
+    description: "Fact table for inventory levels"
+    columns:
+      - name: inventory_id
+        tests:
+          - not_null
+          - unique
+      - name: store_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: last_updated
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: last_updated_year
+        tests:
+          - not_null
+      - name: last_updated_month
+        tests:
+          - not_null
+      - name: last_updated_day
+        tests:
+          - not_null
+
+  - name: fct_pricing_history
+    description: "Fact table for pricing history"
+    columns:
+      - name: history_id
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: effective_year
+        tests:
+          - not_null
+      - name: effective_month
+        tests:
+          - not_null
+
+  - name: fct_purchase_orders
+    description: "Fact table for purchase orders"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: order_date
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+      - name: supplier_name
+        tests:
+          - not_null
+      - name: order_year
+        tests:
+          - not_null
+      - name: order_month
+        tests:
+          - not_null
+      - name: order_day
+        tests:
+          - not_null
+
+  - name: fct_returns
+    description: "Fact table for returns"
+    columns:
+      - name: return_id
+        tests:
+          - not_null
+          - unique
+      - name: item_id
+        tests:
+          - not_null
+      - name: reason
+        tests:
+          - not_null
+      - name: return_date
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: returned_quantity
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: return_year
+        tests:
+          - not_null
+      - name: return_month
+        tests:
+          - not_null
+      - name: return_day
+        tests:
+          - not_null
+
+  - name: fct_sales_items
+    description: "Fact table for sales items"
+    columns:
+      - name: item_id
+        tests:
+          - not_null
+          - unique
+      - name: transaction_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: unit_price
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null
+      - name: tax
+        tests:
+          - not_null
+      - name: gross_amount
+        tests:
+          - not_null
+      - name: net_amount
+        tests:
+          - not_null
+      - name: business_validation_flag
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: category_name
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: transaction_year
+        tests:
+          - not_null
+      - name: transaction_month
+        tests:
+          - not_null
+
+  - name: fct_sales_transactions
+    description: "Fact table for sales transactions"
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: employee_id
+        tests:
+          - not_null
+      - name: transaction_date
+        tests:
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+      - name: payment_id
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: employee_name
+        tests:
+          - not_null
+      - name: payment_method
+        tests:
+          - not_null
+      - name: transaction_year
+        tests:
+          - not_null
+      - name: transaction_month
+        tests:
+          - not_null
+      - name: transaction_day
+        tests:
+          - not_null
+
+  - name: fct_shipments
+    description: "Fact table for shipments"
+    columns:
+      - name: shipment_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: shipped_date
+        tests:
+          - not_null
+      - name: received_date
+        tests:
+          - not_null
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: supplier_name
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: shipped_year
+        tests:
+          - not_null
+      - name: shipped_month
+        tests:
+          - not_null
+      - name: shipped_day
+        tests:
+          - not_null
+      - name: received_year
+        tests:
+          - not_null
+      - name: received_month
+        tests:
+          - not_null
+      - name: received_day
+        tests:
+          - not_null
+      - name: shipment_duration_days
+        tests:
+          - not_null
+
+  - name: fct_stock_movements
+    description: "Fact table for stock movements"
+    columns:
+      - name: movement_id
+        tests:
+          - not_null
+          - unique
+      - name: product_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: movement_type
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: movement_date
+        tests:
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: movement_year
+        tests:
+          - not_null
+      - name: movement_month
+        tests:
+          - not_null
+
+  - name: fct_store_visits
+    description: "Fact table for store visits"
+    columns:
+      - name: visit_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: visit_date
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+      - name: store_name
+        tests:
+          - not_null
+      - name: visit_year
+        tests:
+          - not_null
+      - name: visit_month
+        tests:
+          - not_null
+      - name: visit_day
+        tests:
+          - not_null

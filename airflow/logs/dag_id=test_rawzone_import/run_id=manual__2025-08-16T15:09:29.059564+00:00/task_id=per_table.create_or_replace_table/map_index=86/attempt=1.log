@@ -1,0 +1,11 @@
+{"timestamp":"2025-08-16T15:09:45.058142","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-16T15:09:45.059971","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/raw_zone_migration.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-16T15:09:45.192612Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.192949Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.193026Z","level":"info","event":"Current task name:per_table.create_or_replace_table","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.193077Z","level":"info","event":"Dag name:test_rawzone_import","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.195327","level":"warning","event":"Skipping table=customer_feedback because no columns were returned.","logger":"root"}
+{"timestamp":"2025-08-16T15:09:45.195938","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}
+{"timestamp":"2025-08-16T15:09:45.215224Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.215371Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:09:45.226013Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): per_table.per_table.create_or_replace_table>","chan":"stdout","logger":"task"}

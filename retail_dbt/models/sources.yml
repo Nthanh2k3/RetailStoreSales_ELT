@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: brands
+      - name: campaigns
+      - name: categories
+      - name: customer_feedback
+      - name: customers
+      - name: discount_rules
+      - name: employees
+      - name: inventory
+      - name: loyalty_programs
+      - name: payments
+      - name: pricing_history
+      - name: products
+      - name: promotions
+      - name: purchase_orders
+      - name: returns
+      - name: sales_items
+      - name: sales_transactions
+      - name: shipments
+      - name: stock_movements
+      - name: store_visits
+      - name: stores 
+      - name: suppliers
+      - name: tax_rules

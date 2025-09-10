@@ -1,0 +1,436 @@
+version: 2
+
+models:
+  - name: brands_silver
+    description: "Silver layer table for brand data"
+    columns:
+      - name: brand_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+
+  - name: campaigns_silver
+    description: "Silver layer table for campaign data"
+    columns:
+      - name: campaign_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: budget
+        tests:
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+
+  - name: categories_silver
+    description: "Silver layer table for category data"
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: staged_at
+        tests:
+          - not_null
+
+  - name: customer_feedback_silver
+    description: "Silver layer table for customer feedback data"
+    columns:
+      - name: feedback_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: rating
+        tests:
+          - not_null
+      - name: comments
+        tests:
+          - not_null
+      - name: feedback_date
+        tests:
+          - not_null
+
+  - name: customers_silver
+    description: "Silver layer table for customer data"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: phone
+        tests:
+          - not_null
+      - name: loyalty_program_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+
+  - name: discount_rules_silver
+    description: "Silver layer table for discount rules data"
+    columns:
+      - name: rule_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: discount_type
+        tests:
+          - not_null
+      - name: value
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+
+  - name: employees_silver
+    description: "Silver layer table for employee data"
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: role
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+
+  - name: inventory_silver
+    description: "Silver layer table for inventory data"
+    columns:
+      - name: inventory_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: last_updated
+        tests:
+          - not_null
+
+  - name: loyalty_programs_silver
+    description: "Silver layer table for loyalty programs data"
+    columns:
+      - name: loyalty_program_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: points_per_dollar
+        tests:
+          - not_null
+
+  - name: payments_silver
+    description: "Silver layer table for payment data"
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+      - name: method
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+      - name: paid_at
+        tests:
+          - not_null
+
+  - name: pricing_history_silver
+    description: "Silver layer table for pricing history data"
+    columns:
+      - name: history_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+
+  - name: products_silver
+    description: "Silver layer table for product data"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: category_id
+        tests:
+          - not_null
+      - name: brand_id
+        tests:
+          - not_null
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+
+  - name: promotions_silver
+    description: "Silver layer table for promotion data"
+    columns:
+      - name: promotion_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          - not_null
+
+  - name: purchase_orders_silver
+    description: "Silver layer table for purchase orders data"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: order_date
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+
+  - name: returns_silver
+    description: "Silver layer table for return data"
+    columns:
+      - name: return_id
+        tests:
+          - not_null
+      - name: item_id
+        tests:
+          - not_null
+      - name: reason
+        tests:
+          - not_null
+      - name: return_date
+        tests:
+          - not_null
+
+  - name: sales_items_silver
+    description: "Silver layer table for sales item data"
+    columns:
+      - name: item_id
+        tests:
+          - not_null
+      - name: transaction_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: unit_price
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null
+      - name: tax
+        tests:
+          - not_null
+      - name: gross_amount
+        tests:
+          - not_null
+      - name: net_amount
+        tests:
+          - not_null
+      - name: business_validation_flag
+        tests:
+          - not_null
+
+  - name: sales_transactions_silver
+    description: "Silver layer table for sales transaction data"
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: employee_id
+        tests:
+          - not_null
+      - name: transaction_date
+        tests:
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+      - name: payment_id
+        tests:
+          - not_null
+
+  - name: shipments_silver
+    description: "Silver layer table for shipment data"
+    columns:
+      - name: shipment_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: shipped_date
+        tests:
+          - not_null
+      - name: received_date
+        tests:
+          - not_null
+
+  - name: stock_movements_silver
+    description: "Silver layer table for stock movement data"
+    columns:
+      - name: movement_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: movement_type
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: movement_date
+        tests:
+          - not_null
+
+  - name: store_visits_silver
+    description: "Silver layer table for store visit data"
+    columns:
+      - name: visit_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: store_id
+        tests:
+          - not_null
+      - name: visit_date
+        tests:
+          - not_null
+
+  - name: stores_silver
+    description: "Silver layer table for store data"
+    columns:
+      - name: store_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: location
+        tests:
+          - not_null
+      - name: manager_id
+        tests:
+          - not_null
+
+  - name: suppliers_silver
+    description: "Silver layer table for supplier data"
+    columns:
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: contact_info
+        tests:
+          - not_null
+
+  - name: tax_rules_silver
+    description: "Silver layer table for tax rules data"
+    columns:
+      - name: tax_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: tax_rate
+        tests:
+          - not_null
+      - name: region
+        tests:
+          - not_null

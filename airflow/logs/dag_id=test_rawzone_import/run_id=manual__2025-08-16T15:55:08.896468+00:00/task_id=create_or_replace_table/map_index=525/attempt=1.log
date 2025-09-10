@@ -1,0 +1,13 @@
+{"timestamp":"2025-08-16T15:57:52.167639","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-16T15:57:52.168091","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/raw_zone_migration.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-16T15:57:52.242580Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:52.242689Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:52.244447Z","level":"info","event":"Current task name:create_or_replace_table","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:52.244536Z","level":"info","event":"Dag name:test_rawzone_import","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:52.246424","level":"warning","event":"/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py:471: DeprecationWarning: Using Connection.get_connection_from_secrets from `airflow.models` is deprecated.Please use `from airflow.sdk import Connection` instead\n  warnings.warn(\n","logger":"py.warnings"}
+{"timestamp":"2025-08-16T15:57:52.251938","level":"info","event":"Connection Retrieved 'pg_raw'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-08-16T15:57:52.252066","level":"warning","event":"This setter is for backward compatibility and should not be used.\nSince the introduction of connection property, the providers listed below breaks due to assigning value to self.connection in their __init__ method.\n* apache-airflow-providers-mysql<5.7.1\n* apache-airflow-providers-elasticsearch<5.5.1\n* apache-airflow-providers-postgres<5.13.0","logger":"airflow.task.hooks.airflow.providers.postgres.hooks.postgres.PostgresHook"}
+{"timestamp":"2025-08-16T15:57:54.672403","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator"}
+{"timestamp":"2025-08-16T15:57:54.683247Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:54.683385Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-16T15:57:54.685252Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): create_or_replace_table>","chan":"stdout","logger":"task"}

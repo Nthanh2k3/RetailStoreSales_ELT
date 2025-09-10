@@ -1,0 +1,4 @@
+{"timestamp":"2025-08-16T16:09:13.606253","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-16T16:09:13.606710","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/raw_zone_migration.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-16T16:09:13.632630","level":"error","event":"DAG not found during start up","dag_id":"test_rawzone_import","bundle":"BundleInfo(name='dags-folder', version=None)","path":"raw_zone_migration.py","logger":"task"}
+{"timestamp":"2025-08-16T16:09:13.650594Z","level":"warning","event":"Process exited abnormally","exit_code":1,"logger":"task"}
